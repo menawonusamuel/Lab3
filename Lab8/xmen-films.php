@@ -34,7 +34,7 @@ if ($db === false) {
     die("Error: could not connect. " . mysqli_connect_error());
 }
 $sql = "SELECT * from marvelmovies 
-WHERE title = 'x-men'";
+WHERE title LIKE '%x-men%'";
 if ($result = mysqli_query($db, $sql)) {
     if (mysqli_num_rows($result) > 0) {
         echo "<table border='1'>";
